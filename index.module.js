@@ -1,6 +1,6 @@
 module.exports =  function(app,options){
     let name = options?.name === undefined ? 'css' : options?.name
-    let isPx = options?.isPx === undefined ?  false : options?.isPx
+    let isPx = options?.isPx === undefined ?  true : options?.isPx
   
     function change(el,binding){
         for(const [key,value] of Object.entries(binding.value)){

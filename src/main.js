@@ -3,7 +3,5 @@ import App from './App.vue'
 // import install from '../index'
 const install = require('../index.module')
 const app = createApp(App)
-install(app,{
-    isPx : true
-})
+install(app)
 app.mount('#app')

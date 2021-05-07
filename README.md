@@ -1,8 +1,7 @@
 # vue-cssvar
 Vue 注入 CSS 变量控制样式 (兼容 vue2 , vue3)
 
-demo1 
-点击 div。div 以及其 hover伪类会变色。
+样例：点击 div。div 以及其 hover伪类会变色。
 ```js
 <template>
 	<div v-css="{a,b}" class="box" @click="changeColor"></div>
@@ -58,13 +57,14 @@ new Vue({
 }).$mount('#app')
 ```
 ## vueCssvar 参数
-参数1 ： 指令要绑定的应用，及 vue2 的 Vue、vue3 的 app。
-参数2 ： 相关配置 options
+1. 参数1 ： 指令要绑定的应用，及 vue2 的 Vue、vue3 的 app。
+2. 参数2 ： 相关配置 options
+
  - options.name 指令名，默认 'css'
 
   ```js
   vueCssvar(app,{
-  	    name : 'custom'
+  	name : 'custom'
   })
   	
   -----------template-------------
@@ -72,11 +72,11 @@ new Vue({
   	
   ```
 
-  - options.isPx 值为数字时默认加上px方便计算，默认 false
+  - options.isPx 值为数字时默认加上px方便计算，默认 true
 
   ```js
   vueCssvar(app,{
-  	    isPx : 'true'
+  	isPx : 'true'
   })
   	
   -----------template-------------
@@ -86,7 +86,7 @@ export default {
   data(){
     return {
       c : 1,
-      b : '700' //如果必须后面加px，使用字符串类型
+      b : '700' //如果不必须后面加px，使用字符串类型
     }
   },
   methods: {
@@ -98,7 +98,7 @@ export default {
 </script>
 <style>
   .box {
-  	// 使用 css 内置函数计算其 width,此时的var(--c)为 1px
+  // 使用 css 内置函数计算其 width,此时的var(--c)为 1px
     width : calc( var(--c) * 100); 
     height : 100px;
     background-color : red;
