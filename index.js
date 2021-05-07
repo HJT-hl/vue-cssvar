@@ -1,13 +1,31 @@
-export default function(app,options){
-    let name = options?.name === undefined ? 'css' : options?.name
-    let isPx = options?.isPx === undefined ?  true : options?.isPx
+const config = {
+    name : 'css',
+    isPx : true,
+    toLine : false
+}
+
+function toLowerLine(str) {
+	var temp = str.replace(/[A-Z]/g, function (match) {	
+		return "-" + match.toLowerCase();
+  	});
+  	if(temp.slice(0,1) === '-'){ 
+  		temp = temp.slice(1);
+  	}
+	return temp;
+}
+export default  function(app,options=config) {
+
+    let {name,isPx,toLine} = {...config , ...options}
     function change(el,binding){
         for(let [key,value] of Object.entries(binding.value)){
             if(value == null) continue;
+            if(toLine){
+                key = toLowerLine(key)
+            }
             if(isPx){
                 if ( typeof value === "number") value += 'px'
             }
-            el.style.setProperty('--'+key, value)
+            el.style.setProperty('--'+key, value);
         }
     }
     app.directive(name, {

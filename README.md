@@ -108,6 +108,27 @@ export default {
   
   	
   ```
+  - options.toLine 驼峰命名法转中划线命名法（中划线命名法符合css规范），默认 false
+
+  ```js
+  vueCssvar(app,{
+  	toLine : true
+  })
+  	
+  -----------template-------------
+  <div v-css="{userAvatarColor}" class="box" @click="changeColor"></div>
+
+  -----------script---------------
+  data(){
+    return { 
+      userAvatarColor: 'green'
+    }
+  }
+
+  -----------style-----------------
+  color : var(--user-avatar-color)
+  	
+  ```
 
   
 

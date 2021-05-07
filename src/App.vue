@@ -1,6 +1,6 @@
 <template>
 
-  <div v-css="{a,b,c}" class="box" @click="changeColor">hello</div>
+  <div v-css="{c,aBC,userAvatarColor}" class="box" @click="changeColor">hello</div>
 
 </template>
 
@@ -9,7 +9,8 @@ export default {
   data(){
     return {
       c : 1,
-      b : '700'
+      aBC : '700',
+      userAvatarColor: 'green'
     }
   },
   methods: {
@@ -26,7 +27,8 @@ export default {
     width : calc( var(--c) * 100);
     height : 100px;
     background-color : red;
-    font-weight: var(--b);
+    font-weight: var(--a-b-c);
+    color : var(--user-avatar-color)
   }
  
 
