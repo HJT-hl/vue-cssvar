@@ -1,6 +1,6 @@
 {
   "name": "vue-cssvar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
@@ -28,5 +28,11 @@
     "vue",
     "vue-css",
     "css-variable"
-  ]
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/HJT-hl/vue-cssvar",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/HJT-hl/vue-cssvar"
+  },
 }
